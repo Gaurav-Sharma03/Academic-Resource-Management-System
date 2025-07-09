@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Data Structures and Algorithms",
+    "image": "https://m.media-amazon.com/images/I/71rZr1RVwUL.jpg",
+    "seller": "Ravi Sharma",
+    "email": "ravi.sharma@example.com",
+    "price": 350,
+    "description": "Covers core data structure topics with practical problems and C++ examples."
+  },
+  {
+    "id": 2,
+    "name": "Operating System Concepts",
+    "image": "https://m.media-amazon.com/images/I/71jLBXtWJWL.jpg",
+    "seller": "Sneha Verma",
+    "email": "sneha.verma@example.com",
+    "price": 420,
+    "description": "Standard OS textbook covering process, memory, file systems and Linux."
+  },
+  {
+    "id": 3,
+    "name": "Computer Networks",
+    "image": "https://m.media-amazon.com/images/I/71cWgXHfFYL.jpg",
+    "seller": "Amit Dubey",
+    "email": "amit.dubey@example.com",
+    "price": 390,
+    "description": "Detailed guide on networking protocols, topologies, and communication models."
+  },
+  {
+    "id": 4,
+    "name": "Database System Concepts",
+    "image": "https://m.media-amazon.com/images/I/81rA3tYxzRL.jpg",
+    "seller": "Neha Chauhan",
+    "email": "neha.chauhan@example.com",
+    "price": 450,
+    "description": "Database architecture, design, SQL, and transaction management."
+  },
+  {
+    "id": 5,
+    "name": "Java: The Complete Reference",
+    "image": "https://m.media-amazon.com/images/I/71e0PU8vJKL.jpg",
+    "seller": "Rohit Thakur",
+    "email": "rohit.thakur@example.com",
+    "price": 500,
+    "description": "Comprehensive coverage of Java programming language with examples."
+  },
+  {
+    "id": 6,
+    "name": "Introduction to the Theory of Computation",
+    "image": "https://m.media-amazon.com/images/I/61TJrS5r3eL.jpg",
+    "seller": "Kritika Jain",
+    "email": "kritika.jain@example.com",
+    "price": 480,
+    "description": "Explains automata theory, formal languages, and Turing machines."
+  },
+  {
+    "id": 7,
+    "name": "Artificial Intelligence: A Modern Approach",
+    "image": "https://m.media-amazon.com/images/I/61owZcLDPML.jpg",
+    "seller": "Vikram Singh",
+    "email": "vikram.singh@example.com",
+    "price": 600,
+    "description": "Classic book on AI techniques, planning, robotics, and natural language."
+  },
+  {
+    "id": 8,
+    "name": "Clean Code",
+    "image": "https://m.media-amazon.com/images/I/41xShlnTZTL.jpg",
+    "seller": "Divya Mehta",
+    "email": "divya.mehta@example.com",
+    "price": 560,
+    "description": "Best practices for writing clean, maintainable, and efficient code."
+  },
+  {
+    "id": 9,
+    "name": "Python Crash Course",
+    "image": "https://m.media-amazon.com/images/I/81WGcld4wxL.jpg",
+    "seller": "Manish Kumar",
+    "email": "manish.kumar@example.com",
+    "price": 380,
+    "description": "A hands-on introduction to Python programming for beginners."
+  },
+  {
+    "id": 10,
+    "name": "You Don’t Know JS",
+    "image": "https://m.media-amazon.com/images/I/51vThVo4+vL.jpg",
+    "seller": "Richa Arora",
+    "email": "richa.arora@example.com",
+    "price": 290,
+    "description": "Deep dive into JavaScript core concepts, closures, scope and more."
+  },
+  {
+    "id": 11,
+    "name": "The Pragmatic Programmer",
+    "image": "https://m.media-amazon.com/images/I/51A7U+9y+3L.jpg",
+    "seller": "Sahil Khan",
+    "email": "sahil.khan@example.com",
+    "price": 540,
+    "description": "Tips and techniques for professional software developers."
+  },
+  {
+    "id": 12,
+    "name": "C Programming Language",
+    "image": "https://m.media-amazon.com/images/I/61N4eYxKXjL.jpg",
+    "seller": "Komal Joshi",
+    "email": "komal.joshi@example.com",
+    "price": 320,
+    "description": "Classic reference by Kernighan & Ritchie for learning C."
+  },
+  {
+    "id": 13,
+    "name": "Introduction to Algorithms (CLRS)",
+    "image": "https://m.media-amazon.com/images/I/71sBtM3Yi5L.jpg",
+    "seller": "Yash Malhotra",
+    "email": "yash.malhotra@example.com",
+    "price": 700,
+    "description": "Extensive algorithm guide covering complexity and data structures."
+  },
+  {
+    "id": 14,
+    "name": "Cracking the Coding Interview",
+    "image": "https://m.media-amazon.com/images/I/51Y5NI-Ig9L.jpg",
+    "seller": "Ayesha Khan",
+    "email": "ayesha.khan@example.com",
+    "price": 580,
+    "description": "Tech interview preparation with 189 programming questions."
+  },
+  {
+    "id": 15,
+    "name": "Machine Learning with Python",
+    "image": "https://m.media-amazon.com/images/I/71DqrW6KYyL.jpg",
+    "seller": "Tushar Gupta",
+    "email": "tushar.gupta@example.com",
+    "price": 510,
+    "description": "Hands-on ML projects and libraries using Python."
+  },
+  {
+    "id": 16,
+    "name": "Hands-On Blockchain with Ethereum",
+    "image": "https://m.media-amazon.com/images/I/51UYlPK-VXL.jpg",
+    "seller": "Anjali Rathore",
+    "email": "anjali.rathore@example.com",
+    "price": 450,
+    "description": "Develop dApps using Ethereum, Solidity, and Web3.js."
+  },
+  {
+    "id": 17,
+    "name": "Computer Organization and Design",
+    "image": "https://m.media-amazon.com/images/I/81FxeG+zgPL.jpg",
+    "seller": "Rahul Joshi",
+    "email": "rahul.joshi@example.com",
+    "price": 470,
+    "description": "Microprocessors, memory hierarchy, and assembly programming."
+  },
+  {
+    "id": 18,
+    "name": "Learning Web Design",
+    "image": "https://m.media-amazon.com/images/I/91Rx2o3A+ML.jpg",
+    "seller": "Priya Nair",
+    "email": "priya.nair@example.com",
+    "price": 360,
+    "description": "Beginner’s guide to HTML, CSS, and web standards."
+  },
+  {
+    "id": 19,
+    "name": "The Art of Computer Programming",
+    "image": "https://m.media-amazon.com/images/I/61r1bNHBXjL.jpg",
+    "seller": "Shivam Bansal",
+    "email": "shivam.bansal@example.com",
+    "price": 950,
+    "description": "Comprehensive work by Donald Knuth on algorithms and logic."
+  },
+  {
+    "id": 20,
+    "name": "Deep Learning with Python",
+    "image": "https://m.media-amazon.com/images/I/71p7mv1FThL.jpg",
+    "seller": "Megha Rathi",
+    "email": "megha.rathi@example.com",
+    "price": 620,
+    "description": "Build deep learning models with Keras and TensorFlow."
+  }
+]

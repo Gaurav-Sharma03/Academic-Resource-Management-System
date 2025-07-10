@@ -33,7 +33,7 @@ const teams = {
       photo: mokshika,
     },
     {
-      name: 'Richa Devi',
+      name: 'Richa',
       role: 'UI/UX Designer',
       email: 'richathakur30661@gmail.com',
       university: 'Sardar Patel University, Mandi',

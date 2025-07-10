@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FaUniversity, FaPlus, FaTrash, FaGlobe } from 'react-icons/fa';
+import axios from 'axios';
+
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE
+});
 
 const Universities = () => {
   const [universities, setUniversities] = useState([]);
@@ -24,9 +29,8 @@ const Universities = () => {
 
   const fetchUniversities = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/universities');
-      const data = await res.json();
-      setUniversities(data);
+      const res = await API.get('/api/universities');
+      setUniversities(res.data);
     } catch (err) {
       console.error('❌ Failed to fetch universities:', err);
     }
@@ -76,16 +80,10 @@ const Universities = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/universities', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newUniversity)
-      });
+      const res = await API.post('/api/universities', newUniversity);
 
-      const data = await res.json();
-
-      if (res.ok) {
-        setUniversities([...universities, data]);
+      if (res.status === 201 || res.status === 200) {
+        setUniversities([...universities, res.data]);
         setNewUniversity({
           name: '',
           shortName: '',
@@ -116,11 +114,8 @@ const Universities = () => {
     if (!window.confirm('Are you sure you want to delete this university?')) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/universities/${id}`, {
-        method: 'DELETE'
-      });
-
-      if (res.ok) {
+      const res = await API.delete(`/api/universities/${id}`);
+      if (res.status === 200) {
         setUniversities(universities.filter(u => u._id !== id));
       } else {
         alert('❌ Failed to delete university');

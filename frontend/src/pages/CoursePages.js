@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 
+// Create axios instance with baseURL from environment
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE
+});
+
 const CoursePages = () => {
   const { id } = useParams(); // university ID
   const [university, setUniversity] = useState(null);
@@ -10,7 +15,7 @@ const CoursePages = () => {
   useEffect(() => {
     const fetchUniversity = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/universities/${id}`);
+        const res = await API.get(`/api/universities/${id}`);
         setUniversity(res.data);
       } catch (err) {
         console.error('❌ Failed to fetch university details:', err);
@@ -34,7 +39,11 @@ const CoursePages = () => {
     <div className="min-h-screen px-6 py-12 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white">
       <div className="max-w-5xl mx-auto text-center mb-10">
         {university.logo && (
-          <img src={university.logo} alt="University Logo" className="h-20 mx-auto mb-4 object-contain" />
+          <img
+            src={university.logo}
+            alt="University Logo"
+            className="h-20 mx-auto mb-4 object-contain"
+          />
         )}
         <h1 className="text-4xl font-bold text-blue-800 dark:text-blue-300">{university.name}</h1>
         <p className="text-gray-600 dark:text-gray-400">{university.description}</p>
@@ -67,13 +76,12 @@ const CoursePages = () => {
                         <p className="text-sm text-gray-600 dark:text-gray-400">Semesters: {course.semesters}</p>
                       </div>
 
-                    <Link
-  to={`/course/${id}/${encodeURIComponent(dept.name)}/${encodeURIComponent(course.name)}`}
-  className="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-center"
->
-  Explore Resources
-</Link>
-
+                      <Link
+                        to={`/course/${id}/${encodeURIComponent(dept.name)}/${encodeURIComponent(course.name)}`}
+                        className="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-center"
+                      >
+                        Explore Resources
+                      </Link>
                     </div>
                   ))}
                 </div>

@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { FaUniversity, FaGlobe } from 'react-icons/fa';
 
+// Axios instance with environment-based baseURL
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE,
+});
+
 const Universities = () => {
   const [universities, setUniversities] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('http://localhost:5000/api/universities')
+    API.get('/api/universities')
       .then((res) => setUniversities(res.data))
       .catch((err) => console.error('Failed to fetch universities:', err));
   }, []);

@@ -1,4 +1,10 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+
+// ✅ Use environment-based API base URL
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE
+});
 
 const AddUniversities = () => {
   const [formData, setFormData] = useState({
@@ -56,17 +62,10 @@ const AddUniversities = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://localhost:5000/api/universities', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
+      // ✅ Updated POST request using API instance
+      const res = await API.post('/api/universities', formData);
+      if (res.status === 200 || res.status === 201) {
         setMessage('✅ University added successfully!');
-        // Reset
         setFormData({
           name: '',
           shortName: '',
@@ -82,8 +81,11 @@ const AddUniversities = () => {
           ]
         });
       } else {
-        setMessage(`❌ Failed: ${data.error || 'Server error'}`);
+        setMessage(`❌ Failed: ${res.data.error || 'Server error'}`);
       }
+
+      // ❌ Old local fetch:
+      // const res = await fetch('http://localhost:5000/api/universities', {...});
     } catch (error) {
       console.error('Error:', error);
       setMessage('❌ Failed to connect to server');

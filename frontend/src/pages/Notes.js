@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaFilePdf } from 'react-icons/fa';
 
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE
+});
+
 const Notes = () => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('http://localhost:5000/api/notes') // your API route
+    API.get('/api/resources/notes')
       .then((res) => setNotes(res.data))
       .catch((err) => console.error('Error fetching notes:', err));
   }, []);
@@ -29,24 +32,26 @@ const Notes = () => {
             >
               <div className="flex items-center gap-2 mb-3">
                 <FaFilePdf className="text-red-500 text-2xl" />
-                <h2 className="text-lg font-semibold">{note.title}</h2>
+                <h2 className="text-lg font-semibold">
+                  {note.title || note.subject || 'Untitled Note'}
+                </h2>
               </div>
 
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-                <strong>University:</strong> {note.course?.university?.name || 'Unknown'}
+                <strong>University:</strong> {note.university || 'Unknown'}
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-                <strong>Course:</strong> {note.course?.courseName || 'N/A'}
+                <strong>Course:</strong> {note.course || 'N/A'}
               </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                <strong>Type:</strong> {note.course?.type || 'N/A'}
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                <strong>Semester:</strong> {note.semester || 'N/A'}
               </p>
 
               <a
-                href={`http://localhost:5000/uploads/${note.pdf}`}
+                href={`${process.env.REACT_APP_API_BASE}/uploads/resources/${note.file}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-red-600 hover:bg-red-700 text-white text-sm px-4 py-2 rounded"
+                className="inline-block bg-red-600 hover:bg-red-700 text-white text-sm px-4 py-2 rounded mt-3"
               >
                 Download PDF
               </a>

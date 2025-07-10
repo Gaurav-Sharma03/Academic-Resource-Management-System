@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+// ✅ Create axios instance using env base URL
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE,
+});
 
 const AdminRegister = () => {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -28,25 +34,19 @@ const AdminRegister = () => {
 
     try {
       setLoading(true);
-      const res = await fetch('http://localhost:5000/api/admin/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
-
-      const data = await res.json();
+      const res = await API.post('/api/admin/register', form);
       setLoading(false);
 
-      if (res.ok) {
+      if (res.status === 201 || res.status === 200) {
         alert('✅ Admin registered successfully!');
         navigate('/admin/login');
       } else {
-        alert(data.error || '❌ Registration failed');
+        alert(res.data.error || '❌ Registration failed');
       }
     } catch (err) {
       setLoading(false);
-      alert('❌ Server error');
       console.error(err);
+      alert('❌ Server error. Please try again.');
     }
   };
 

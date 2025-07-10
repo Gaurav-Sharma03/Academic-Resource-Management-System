@@ -3,6 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { FaTrash, FaFilePdf } from 'react-icons/fa';
 import axios from 'axios';
 
+// ✅ Use environment-based API
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE,
+});
+
 const Notes = () => {
   const [notes, setNotes] = useState({});
 
@@ -12,7 +17,7 @@ const Notes = () => {
 
   const fetchNotes = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/resources/notes');
+      const res = await API.get('/api/resources/notes');
       const grouped = res.data.reduce((acc, note) => {
         if (!acc[note.university]) acc[note.university] = [];
         acc[note.university].push(note);
@@ -28,8 +33,8 @@ const Notes = () => {
     if (!window.confirm('Are you sure you want to delete this note?')) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/resources/${id}`);
-      fetchNotes(); // Refresh list after deletion
+      await API.delete(`/api/resources/${id}`);
+      fetchNotes(); // Refresh after deletion
     } catch (err) {
       console.error('❌ Failed to delete note:', err);
     }
@@ -55,8 +60,9 @@ const Notes = () => {
                   <p className="text-sm text-gray-600">Course: {note.course}</p>
                   <p className="text-sm text-gray-600 mb-2">Semester: {note.semester}</p>
 
+                  {/* ✅ Use dynamic file URL from env */}
                   <a
-                    href={`http://localhost:5000/uploads/resources/${note.file}`}
+                    href={`${process.env.REACT_APP_API_BASE}/uploads/resources/${note.file}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-blue-600 hover:underline text-sm"

@@ -3,6 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { FaTrash, FaFilePdf } from 'react-icons/fa';
 import axios from 'axios';
 
+// ✅ Use centralized API with environment base URL
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE
+});
+
 const Papers = () => {
   const [papers, setPapers] = useState({});
 
@@ -12,7 +17,7 @@ const Papers = () => {
 
   const fetchPapers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/resources/papers');
+      const res = await API.get('/api/resources/papers');
       const grouped = res.data.reduce((acc, paper) => {
         if (!acc[paper.university]) acc[paper.university] = [];
         acc[paper.university].push(paper);
@@ -28,8 +33,8 @@ const Papers = () => {
     if (!window.confirm('Are you sure you want to delete this paper?')) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/resources/${id}`);
-      fetchPapers();
+      await API.delete(`/api/resources/${id}`);
+      fetchPapers(); // Refresh
     } catch (err) {
       console.error('❌ Failed to delete paper:', err);
     }
@@ -55,8 +60,9 @@ const Papers = () => {
                   <p className="text-sm text-gray-600">Course: {paper.course}</p>
                   <p className="text-sm text-gray-600 mb-2">Semester: {paper.semester}</p>
 
+                  {/* ✅ Dynamic PDF link */}
                   <a
-                    href={`http://localhost:5000/uploads/resources/${paper.file}`}
+                    href={`${process.env.REACT_APP_API_BASE}/uploads/resources/${paper.file}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-blue-600 hover:underline text-sm"

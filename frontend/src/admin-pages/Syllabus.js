@@ -3,6 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { FaTrash, FaFilePdf } from 'react-icons/fa';
 import axios from 'axios';
 
+// ✅ Use env-based base URL for cleaner deployment config
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE
+});
+
 const Syllabus = () => {
   const [syllabus, setSyllabus] = useState({});
 
@@ -12,7 +17,7 @@ const Syllabus = () => {
 
   const fetchSyllabus = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/resources/syllabus');
+      const res = await API.get('/api/resources/syllabus');
       const grouped = res.data.reduce((acc, item) => {
         if (!acc[item.university]) acc[item.university] = [];
         acc[item.university].push(item);
@@ -28,8 +33,8 @@ const Syllabus = () => {
     if (!window.confirm('Are you sure you want to delete this syllabus?')) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/resources/${id}`);
-      fetchSyllabus();
+      await API.delete(`/api/resources/${id}`);
+      fetchSyllabus(); // Refresh
     } catch (err) {
       console.error('❌ Failed to delete syllabus:', err);
     }
@@ -55,8 +60,9 @@ const Syllabus = () => {
                   <p className="text-sm text-gray-600">Course: {item.course}</p>
                   <p className="text-sm text-gray-600 mb-2">Semester: {item.semester}</p>
 
+                  {/* ✅ Use dynamic backend URL from env */}
                   <a
-                    href={`http://localhost:5000/uploads/resources/${item.file}`}
+                    href={`${process.env.REACT_APP_API_BASE}/uploads/resources/${item.file}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-blue-600 hover:underline text-sm"

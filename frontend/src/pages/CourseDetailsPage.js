@@ -1,7 +1,11 @@
-// src/pages/CourseDetailsPage.js
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+
+// API instance using env base URL
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE
+});
 
 const CourseDetailsPage = () => {
   const { universityId, department, courseName } = useParams();
@@ -13,7 +17,7 @@ const CourseDetailsPage = () => {
   useEffect(() => {
     const fetchUniversity = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/universities/${universityId}`);
+        const res = await API.get(`/api/universities/${universityId}`);
         const uni = res.data;
         setUniversity(uni);
         const dept = uni.departments.find((d) => d.name === department);
@@ -32,10 +36,7 @@ const CourseDetailsPage = () => {
     setLoading((prev) => ({ ...prev, [key]: true }));
 
     try {
-      const res = await axios.get(
-        `http://localhost:5000/api/resources/${universityId}/${department}/${courseName}/${semester}`
-      );
-
+      const res = await API.get(`/api/resources/${universityId}/${department}/${courseName}/${semester}`);
       const filtered = res.data.filter((item) => item.type === type);
 
       setResources((prev) => ({
@@ -53,14 +54,15 @@ const CourseDetailsPage = () => {
   };
 
   const renderLinks = (data, type) => {
-    if (!data || data.length === 0) return <p className="text-gray-500">No {type} found</p>;
+    if (!data || data.length === 0)
+      return <p className="text-gray-500">No {type} found</p>;
 
     return (
       <ul className="list-disc pl-5 space-y-1 text-sm">
         {data.map((item, idx) => (
           <li key={idx}>
             <a
-              href={`http://localhost:5000/uploads/resources/${item.file}`}
+              href={`${process.env.REACT_APP_API_BASE}/uploads/resources/${item.file}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 underline"
@@ -75,7 +77,6 @@ const CourseDetailsPage = () => {
 
   return (
     <div className="px-6 py-8 min-h-screen bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-white">
-      {/* University Header */}
       {university && (
         <div className="max-w-6xl mx-auto text-center mb-10">
           {university.logo && (
@@ -87,7 +88,9 @@ const CourseDetailsPage = () => {
         </div>
       )}
 
-      <h2 className="text-2xl font-bold text-center mb-10">{courseName} — {department}</h2>
+      <h2 className="text-2xl font-bold text-center mb-10">
+        {courseName} — {department}
+      </h2>
 
       {semesterCount > 0 ? (
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

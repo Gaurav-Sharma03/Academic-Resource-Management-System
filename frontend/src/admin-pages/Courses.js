@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaTrash } from 'react-icons/fa';
 
+// ✅ Axios instance with environment-based backend URL
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE,
+});
+
 const Courses = () => {
   const [universities, setUniversities] = useState([]);
   const [allCourses, setAllCourses] = useState([]);
@@ -12,7 +17,7 @@ const Courses = () => {
 
   const fetchUniversities = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/universities');
+      const res = await API.get('/api/universities');
       setUniversities(res.data);
       const extractedCourses = [];
 
@@ -38,8 +43,7 @@ const Courses = () => {
   const handleDelete = async (universityId, departmentName, courseName) => {
     if (!window.confirm('Are you sure you want to delete this course?')) return;
     try {
-      // You need to implement this route in your backend
-      await axios.patch(`http://localhost:5000/api/universities/${universityId}/remove-course`, {
+      await API.patch(`/api/universities/${universityId}/remove-course`, {
         departmentName,
         courseName
       });

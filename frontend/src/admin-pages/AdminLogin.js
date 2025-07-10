@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+// ✅ Use environment variable for API base
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE,
+});
 
 const AdminLogin = () => {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -13,23 +19,17 @@ const AdminLogin = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://localhost:5000/api/admin/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
+      const res = await API.post('/api/admin/login', form);
 
-      const data = await res.json();
-
-      if (res.ok) {
-        localStorage.setItem('adminToken', data.token);
-        navigate('/admin'); // Redirect to dashboard
+      if (res.status === 200 && res.data.token) {
+        localStorage.setItem('adminToken', res.data.token);
+        navigate('/admin'); // ✅ Redirect to dashboard
       } else {
-        alert(data.error || 'Login failed');
+        alert(res.data.error || '❌ Login failed');
       }
     } catch (error) {
-      alert('❌ Server error');
-      console.error(error);
+      console.error('❌ Server error:', error);
+      alert('❌ Login failed. Please try again.');
     }
   };
 

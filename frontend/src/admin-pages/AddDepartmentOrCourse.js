@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+// ✅ Use environment-based backend URL
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE
+});
+
 const AddDepartmentOrCourse = () => {
   const [universities, setUniversities] = useState([]);
   const [selectedUniversity, setSelectedUniversity] = useState('');
@@ -11,14 +16,19 @@ const AddDepartmentOrCourse = () => {
   const [departmentName, setDepartmentName] = useState('');
   const [availableDepartments, setAvailableDepartments] = useState([]);
 
-  // Fetch universities
+  // ✅ Fetch universities
   useEffect(() => {
-    axios.get('http://localhost:5000/api/universities')
-      .then(res => setUniversities(res.data))
-      .catch(err => console.error(err));
+    API.get('/api/universities')
+      .then((res) => setUniversities(res.data))
+      .catch((err) => console.error('Failed to fetch universities:', err));
+
+    // ❌ Old version:
+    // axios.get('http://localhost:5000/api/universities')
+    //   .then(res => setUniversities(res.data))
+    //   .catch(err => console.error(err));
   }, []);
 
-  // Fetch departments when a university is selected
+  // ✅ Update departments when university changes
   useEffect(() => {
     if (!selectedUniversity) return;
     const uni = universities.find(u => u._id === selectedUniversity);
@@ -40,18 +50,19 @@ const AddDepartmentOrCourse = () => {
         const trimmedName = department.name.trim();
         if (!trimmedName) return alert('❌ Department name required');
 
-        await axios.patch(`http://localhost:5000/api/universities/${selectedUniversity}/add-department`, {
+        await API.patch(`/api/universities/${selectedUniversity}/add-department`, {
           department: { name: trimmedName }
         });
 
         alert('✅ Department added successfully');
         setDepartment({ name: '', courses: [] });
+
       } else {
         if (!departmentName.trim() || !course.name.trim()) {
           return alert('❌ Department and Course name required');
         }
 
-        await axios.patch(`http://localhost:5000/api/universities/${selectedUniversity}/add-course`, {
+        await API.patch(`/api/universities/${selectedUniversity}/add-course`, {
           departmentName,
           course
         });
@@ -60,9 +71,14 @@ const AddDepartmentOrCourse = () => {
         setCourse({ name: '', level: 'UG', duration: '', semesters: '' });
       }
 
-      // Refresh universities
-      const updated = await axios.get('http://localhost:5000/api/universities');
+      // ✅ Refresh university data
+      const updated = await API.get('/api/universities');
       setUniversities(updated.data);
+
+      // ❌ Old version:
+      // const updated = await axios.get('http://localhost:5000/api/universities');
+      // setUniversities(updated.data);
+
     } catch (err) {
       console.error(err);
       alert('❌ Failed to add');
@@ -96,16 +112,14 @@ const AddDepartmentOrCourse = () => {
       {/* Form */}
       <form onSubmit={handleAdd} className="space-y-4">
         {mode === 'department' ? (
-          <>
-            <input
-              type="text"
-              placeholder="Department Name"
-              className="border p-2 w-full"
-              value={department.name}
-              onChange={(e) => setDepartment({ ...department, name: e.target.value })}
-              required
-            />
-          </>
+          <input
+            type="text"
+            placeholder="Department Name"
+            className="border p-2 w-full"
+            value={department.name}
+            onChange={(e) => setDepartment({ ...department, name: e.target.value })}
+            required
+          />
         ) : (
           <>
             <select
@@ -128,7 +142,11 @@ const AddDepartmentOrCourse = () => {
               onChange={(e) => setCourse({ ...course, name: e.target.value })}
               required
             />
-            <select value={course.level} onChange={(e) => setCourse({ ...course, level: e.target.value })} className="border p-2 w-full">
+            <select
+              value={course.level}
+              onChange={(e) => setCourse({ ...course, level: e.target.value })}
+              className="border p-2 w-full"
+            >
               <option value="UG">UG</option>
               <option value="PG">PG</option>
               <option value="PhD">PhD</option>

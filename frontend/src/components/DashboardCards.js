@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import {
   FaUniversity,
   FaStickyNote,
@@ -6,6 +7,11 @@ import {
   FaFileAlt,
   FaChalkboardTeacher
 } from 'react-icons/fa';
+
+// Reusable axios instance
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE
+});
 
 const DashboardCards = () => {
   const [stats, setStats] = useState({
@@ -17,9 +23,8 @@ const DashboardCards = () => {
   });
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/stats')
-      .then(res => res.json())
-      .then(data => setStats(data))
+    API.get('/api/stats')
+      .then(res => setStats(res.data))
       .catch(err => console.error('Failed to fetch stats:', err));
   }, []);
 

@@ -1,5 +1,11 @@
+// 📄 AddSyllabus.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
+// ✅ Use env-based API base URL
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE
+});
 
 const AddSyllabus = () => {
   const [formData, setFormData] = useState({
@@ -10,38 +16,103 @@ const AddSyllabus = () => {
   const [universities, setUniversities] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/universities')
+    // ✅ Use API instance
+    API.get('/api/universities')
       .then(res => setUniversities(res.data))
-      .catch(err => console.error(err));
+      .catch(err => console.error('Error fetching universities:', err));
+
+    // ❌ Old:
+    // axios.get('http://localhost:5000/api/universities')
+    //   .then(res => setUniversities(res.data))
+    //   .catch(err => console.error(err));
   }, []);
 
-  const handleChange = e => setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleChange = e =>
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/syllabus', formData);
+      // ✅ Use API instance
+      await API.post('/api/syllabus', formData);
       alert('✅ Syllabus uploaded!');
-      setFormData({ university: '', departmentName: '', courseName: '', semester: '', fileUrl: '', uploadedBy: '' });
+      setFormData({
+        university: '', departmentName: '', courseName: '',
+        semester: '', fileUrl: '', uploadedBy: ''
+      });
     } catch (err) {
+      console.error('❌ Upload failed:', err);
       alert('❌ Upload failed');
     }
+
+    // ❌ Old:
+    // await axios.post('http://localhost:5000/api/syllabus', formData);
   };
 
   return (
     <div className="max-w-xl mx-auto mt-10 p-6 bg-white shadow rounded">
       <h2 className="text-2xl font-bold mb-4">Upload Syllabus</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <select name="university" onChange={handleChange} value={formData.university} required className="w-full p-2 border rounded">
+        <select
+          name="university"
+          onChange={handleChange}
+          value={formData.university}
+          required
+          className="w-full p-2 border rounded"
+        >
           <option value="">-- Select University --</option>
-          {universities.map(u => <option key={u._id} value={u._id}>{u.name}</option>)}
+          {universities.map(u => (
+            <option key={u._id} value={u._id}>{u.name}</option>
+          ))}
         </select>
-        <input name="departmentName" placeholder="Department" value={formData.departmentName} onChange={handleChange} className="w-full border p-2 rounded" required />
-        <input name="courseName" placeholder="Course Name" value={formData.courseName} onChange={handleChange} className="w-full border p-2 rounded" required />
-        <input name="semester" placeholder="Semester" value={formData.semester} onChange={handleChange} className="w-full border p-2 rounded" required />
-        <input name="fileUrl" placeholder="PDF URL" value={formData.fileUrl} onChange={handleChange} className="w-full border p-2 rounded" required />
-        <input name="uploadedBy" placeholder="Uploader Name" value={formData.uploadedBy} onChange={handleChange} className="w-full border p-2 rounded" />
-        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Upload Syllabus</button>
+
+        <input
+          name="departmentName"
+          placeholder="Department"
+          value={formData.departmentName}
+          onChange={handleChange}
+          className="w-full border p-2 rounded"
+          required
+        />
+
+        <input
+          name="courseName"
+          placeholder="Course Name"
+          value={formData.courseName}
+          onChange={handleChange}
+          className="w-full border p-2 rounded"
+          required
+        />
+
+        <input
+          name="semester"
+          placeholder="Semester"
+          value={formData.semester}
+          onChange={handleChange}
+          className="w-full border p-2 rounded"
+          required
+        />
+
+        <input
+          name="fileUrl"
+          placeholder="PDF URL"
+          value={formData.fileUrl}
+          onChange={handleChange}
+          className="w-full border p-2 rounded"
+          required
+        />
+
+        <input
+          name="uploadedBy"
+          placeholder="Uploader Name"
+          value={formData.uploadedBy}
+          onChange={handleChange}
+          className="w-full border p-2 rounded"
+        />
+
+        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
+          Upload Syllabus
+        </button>
       </form>
     </div>
   );

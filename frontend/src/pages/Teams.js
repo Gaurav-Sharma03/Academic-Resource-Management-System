@@ -1,76 +1,100 @@
 import React from 'react';
-
+import shivam from '../assets/team/shivam.jpeg';
+import gaurav from '../assets/team/gaurav.jpeg';
+import mokshika from '../assets/team/mokshika.jpeg';
+//import richa from '../assets/team/richa.jpeg';
+//import nikhil from '../assets/team/nikhil.jpeg';
+//import abhishek from '../assets/team/abhishek.jpeg';
+import chandni from '../assets/team/chandni.jpeg';
+import lakshay from '../assets/team/lakshay.jpeg';
+import spu from '../assets/team/spu.jpeg';
+import hpu from '../assets/team/hpu.jpeg';
 const teams = {
   planning: [
     {
-      name: 'Gautav Sharma',
+      name: 'Shivam Sharma',
       role: 'Project Coordinator',
-      email: 'gautav@example.com',
+      email: 'anshusharma5787@gmail.com',
       university: 'Sardar Patel University, Mandi',
-      photo: 'https://i.pravatar.cc/150?img=1',
+      photo: shivam,
     },
     {
-      name: 'Anjali Thakur',
+      name: 'Gaurav',
+      role: 'Technical Lead | Project Developer',
+      email: 'gauravspumca@gmail.com',
+      university: 'Sardar Patel University, Mandi',
+      photo: gaurav,
+    },
+    {
+      name: 'Mokshika Sharma',
       role: 'UI/UX Designer',
-      email: 'anjali@example.com',
+      email: 'mokshu0703@gmail.com',
       university: 'Sardar Patel University, Mandi',
-      photo: 'https://i.pravatar.cc/150?img=2',
+      photo: mokshika,
     },
     {
-      name: 'Karan Verma',
-      role: 'Frontend Developer',
+      name: 'Richa Devi',
+      role: 'UI/UX Designer',
+      email: 'richa@gmail.com',
+      university: 'Sardar Patel University, Mandi',
+      photo: '',
+    },
+    {
+      name: 'Nikhil Kumar',
+      role: 'Logo Designer',
       email: 'karan@example.com',
       university: 'Sardar Patel University, Mandi',
-      photo: 'https://i.pravatar.cc/150?img=3',
+      photo: '',
+    },
+    {
+      name: 'Abhishek',
+      role: 'Logo Designer',
+      email: 'karan@example.com',
+      university: 'Sardar Patel University, Mandi',
+      photo: '',
     },
   ],
   content: [
     {
-      name: 'Ritika Mehta',
-      role: 'Syllabus Curator',
-      email: 'ritika@example.com',
+      name: 'Chandni',
+      role: 'Notes Manager | Question Paper Analyst',
+      email: 'chandnimandihp@gmail.com',
       university: 'Sardar Patel University, Mandi',
-      photo: 'https://i.pravatar.cc/150?img=4',
+      photo: chandni,
     },
     {
-      name: 'Soham Rajput',
-      role: 'Notes Manager',
-      email: 'soham@example.com',
+      name: 'Lakshay',
+      role: 'Syllabus Curator | Content Manager',
+      email: 'gulerialakshay278@gmial.com',
       university: 'Sardar Patel University, Mandi',
-      photo: 'https://i.pravatar.cc/150?img=5',
-    },
-    {
-      name: 'Aditya Rana',
-      role: 'Question Paper Analyst',
-      email: 'aditya@example.com',
-      university: 'Sardar Patel University, Mandi',
-      photo: 'https://i.pravatar.cc/150?img=6',
+      photo: lakshay,
     },
   ],
   thanks: [
     {
-      name: 'Dr. Suresh Kumar',
+      name: 'Dr. SPU Mentor',
       role: 'Project Mentor',
-      email: 'suresh.kumar@spu.ac.in',
+      email: 'mentor@spu.ac.in',
       university: 'Sardar Patel University, Mandi',
-      photo: 'https://i.pravatar.cc/150?img=7',
+      photo: spu,
     },
     {
       name: 'SPU, Mandi',
       role: 'Academic Data Provider',
-      email: 'info@spu.ac.in',
+      email: 'registrar@spumandi.ac.in',
       university: 'Sardar Patel University, Mandi',
-      photo: 'https://i.pravatar.cc/150?img=8',
+      photo: spu,
     },
     {
-      name: 'OpenAI',
-      role: 'AI Assistant (GPT)',
-      email: 'support@openai.com',
-      university: 'N/A',
-      photo: 'https://i.pravatar.cc/150?img=9',
-    },
-  ],
+      name: 'HPU, Shimla',
+      role: 'Academic Data Provider',
+      email: 'deanstudies@hpuniv.ac.in',
+      university: 'Himachal Pradesh University, Shimla',
+      photo: hpu,
+    }
+  ]
 };
+
 
 const TeamCard = ({ member, theme }) => {
   const themeColors = {

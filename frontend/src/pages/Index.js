@@ -8,7 +8,7 @@ import Books from './Books';
 import Universities from './Universities';
 import CoursePages from './CoursePages';
 import CourseDetailsPage from './CourseDetailsPage';
-
+import EPlatform from './EPlatform';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AdminLogin from '../admin-pages/AdminLogin'; // Ensure this path is correct
@@ -45,6 +45,7 @@ const Index = () => {
           <Route path="/books" element={<Books />} />
           <Route path="/universities" element={<Universities />} />
           <Route path="/coursepages/:id/courses" element={<CoursePages />} />
+        <Route path="/eplatform" element={<EPlatform />} />
           <Route
             path="/course/:universityId/:department/:courseName"
             element={<CourseDetailsPage />}

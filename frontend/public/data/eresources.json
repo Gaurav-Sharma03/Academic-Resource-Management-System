@@ -1,0 +1,116 @@
+[
+  {
+    "category": "Tutorials",
+    "title": "GeeksforGeeks",
+    "description": "Portal for DSA, web dev, placement prep and more.",
+    "link": "https://www.geeksforgeeks.org/",
+    "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230313172301/gfglogo-300x300.png"
+  },
+  {
+    "category": "Tutorials",
+    "title": "W3Schools",
+    "description": "HTML, CSS, JS, Python and backend tutorials.",
+    "link": "https://www.w3schools.com/",
+    "image": "https://www.w3schools.com/images/w3schools_green.jpg"
+  },
+  {
+    "category": "eLibrary",
+    "title": "National Digital Library of India",
+    "description": "Access academic books, journals, theses, and more.",
+    "link": "https://ndl.iitkgp.ac.in/",
+    "image": "https://ndl.iitkgp.ac.in/assets/images/ndl_logo.png"
+  },
+  {
+    "category": "eLibrary",
+    "title": "Open Library",
+    "description": "Read or borrow eBooks for free from millions of titles.",
+    "link": "https://openlibrary.org/",
+    "image": "https://openlibrary.org/static/images/openlibrary-logo-tighter.svg"
+  },
+  {
+    "category": "eBooks",
+    "title": "PDF Drive",
+    "description": "Search and download millions of free eBooks.",
+    "link": "https://www.pdfdrive.com/",
+    "image": "https://www.pdfdrive.com/assets/images/logo.png"
+  },
+  {
+    "category": "eBooks",
+    "title": "Bookboon",
+    "description": "Free textbooks and business eBooks for students and professionals.",
+    "link": "https://bookboon.com/",
+    "image": "https://bookboon.com/images/logo.png"
+  },
+  {
+    "category": "YouTube",
+    "title": "Apna College",
+    "description": "DSA + Web Dev free courses in Hindi.",
+    "link": "https://www.youtube.com/@ApnaCollegeOfficial",
+    "image": "https://yt3.googleusercontent.com/ytc/APkrFKbWzG7lEB2kHk1UTcUSwqv8FCj_5If3W7Hb9fvb=s900-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "category": "YouTube",
+    "title": "Gate Smashers",
+    "description": "Computer Science subjects in detail (OS, DBMS, CN, etc).",
+    "link": "https://www.youtube.com/@GateSmashers",
+    "image": "https://yt3.googleusercontent.com/ytc/APkrFKbV5kT6P1zPMRSMbKec7Ep4Z9CqefUJnQxtKrHk=s900-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "category": "MOOCs",
+    "title": "Coursera",
+    "description": "Courses from top universities like Stanford, Google, and IBM.",
+    "link": "https://www.coursera.org/",
+    "image": "https://about.coursera.org/static/whiteCourseraLogo.png"
+  },
+  {
+    "category": "MOOCs",
+    "title": "edX",
+    "description": "Top university courses for free or with certificates.",
+    "link": "https://www.edx.org/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/EdX.svg"
+  },
+
+ 
+  {
+    "category": "MOOCs",
+    "title": "NPTEL",
+    "description": "Indian government-backed online engineering and science courses.",
+    "link": "https://nptel.ac.in/",
+    "image": "https://nptel.ac.in/images/nptel-logo.png"
+  },
+  {
+    "category": "Tutorials",
+    "title": "JavaTpoint",
+    "description": "Simple tutorials on Java, Python, C, DBMS, and more.",
+    "link": "https://www.javatpoint.com/",
+    "image": "https://static.javatpoint.com/images/logo/jtp_logo.png"
+  },
+  {
+    "category": "eBooks",
+    "title": "Library Genesis",
+    "description": "A large database of scientific articles and academic books.",
+    "link": "https://libgen.rs/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Libgen-logo.png"
+  },
+  {
+    "category": "MOOCs",
+    "title": "Udemy",
+    "description": "Affordable online courses in tech, design, and business.",
+    "link": "https://www.udemy.com/",
+    "image": "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
+  },
+  {
+    "category": "YouTube",
+    "title": "CodeWithHarry",
+    "description": "Full-stack web development and programming tutorials in Hindi.",
+    "link": "https://www.youtube.com/@CodeWithHarry",
+    "image": "https://yt3.googleusercontent.com/ytc/APkrFKZPR4_U7AVvLMp6XSo1zBBSXr_hZVnNgUWy7gh-=s900-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "category": "Tutorials",
+    "title": "Programiz",
+    "description": "Best site to learn programming languages like C, Python, Java.",
+    "link": "https://www.programiz.com/",
+    "image": "https://www.programiz.com/sites/all/themes/programiz/assets/images/logo.png"
+  }
+]

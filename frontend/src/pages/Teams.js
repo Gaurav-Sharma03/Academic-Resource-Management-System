@@ -51,7 +51,7 @@ const teams = {
       role: 'Logo Designer | Graphics Designe',
       email: 'abhishekchoudhary123123123@gmail.com',
       university: 'Sardar Patel University, Mandi',
-      photo: 'abhishek',
+      photo: abhishek,
     },
   ],
   content: [

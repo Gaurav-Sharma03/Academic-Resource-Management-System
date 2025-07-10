@@ -123,8 +123,8 @@ const AboutUs = () => {
             <FaPhoneAlt className="text-4xl" /> Contact Us
           </h2>
           <div className="text-center text-gray-700 dark:text-gray-300 text-lg space-y-4 mb-6">
-            <p><FaEnvelope className="inline-block mr-2 text-blue-600" /> Email: <a href="mailto:arms.portal@example.com" className="text-blue-600 hover:underline">arms.portal@example.com</a></p>
-            <p><FaPhoneAlt className="inline-block mr-2 text-blue-600" /> Phone: <a href="tel:+911234567890" className="text-blue-600 hover:underline">+91 12345 67890</a></p>
+            <p><FaEnvelope className="inline-block mr-2 text-blue-600" /> Email: <a href="mailto:anshusharma5787@gmail.com" className="text-blue-600 hover:underline">anshusharma5787@gmail.com</a></p>
+            
             <p><FaMapMarkerAlt className="inline-block mr-2 text-blue-600" /> Address: SPU University Campus, Mandi, Himachal Pradesh</p>
           </div>
 

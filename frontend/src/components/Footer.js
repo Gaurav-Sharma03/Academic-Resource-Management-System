@@ -37,7 +37,7 @@ const Footer = () => {
          </Link>
          
           <p className="text-sm">Empowering students and faculty with centralized academic resources.</p>
-          <p className="text-sm mt-4">&copy; {new Date().getFullYear()} <span className="text-blue-600 dark:text-blue-300">Gaurav & Team</span></p>
+          <p className="text-sm mt-4">&copy; {new Date().getFullYear()} <span className="text-blue-600 dark:text-blue-300"> Academic Resource Management System Team</span></p>
         </div>
 
         {/* 2. Quick Links */}
@@ -73,7 +73,7 @@ const Footer = () => {
           </ul>
           <div className="mt-6">
             <h3 className="text-lg font-semibold text-blue-600 dark:text-blue-300 mb-1">Contact Us</h3>
-            <p className="text-sm">📧 <a href="mailto:arms.portal@example.com" className="underline">arms.portal@example.com</a></p>
+            <p className="text-sm">📧 <a href="mailto:arms.portal@example.com" className="underline">anshusharma5787@gmail.com</a></p>
             <div className="flex justify-center sm:justify-start mt-3 gap-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">
                 <FaFacebookF size={20} />

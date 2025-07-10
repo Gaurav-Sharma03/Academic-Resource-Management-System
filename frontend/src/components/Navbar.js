@@ -22,20 +22,25 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <img src={ARMS} alt="ARMS Logo" className="h-20 w-auto object-contain" />
-            <div className="leading-tight">
+          <Link to="/" className="flex items-center gap-3 sm:gap-4">
+            <img
+              src={ARMS}
+              alt="ARMS Logo"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain transition-all duration-300"
+            />
+            <div className="leading-tight text-left">
               <span
-                className="text-2xl font-extrabold text-blue-600 dark:text-blue-400 font-serif tracking-wide"
+                className="text-lg sm:text-xl md:text-2xl font-extrabold text-blue-600 dark:text-blue-400 font-serif tracking-wide"
                 title="Academic Resource Management System"
               >
                 ARMS
               </span>
-              <p className="text-sm text-gray-500 dark:text-gray-300">
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-300">
                 Academic Resource Management System
               </p>
             </div>
           </Link>
+
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-6 items-center">
@@ -78,11 +83,12 @@ const Navbar = () => {
           <Link to="/books" className="block hover:text-blue-500 transition">Books</Link>
           <Link to="/eplatform" className="block hover:text-blue-500 transition">E-Resources</Link>
           <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="block w-full text-left p-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
-          >
-            {darkMode ? 'Light Mode' : 'Dark Mode'}
-          </button>
+              onClick={() => setDarkMode(!darkMode)}
+              className="ml-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+              title="Toggle theme"
+            >
+              {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
         </div>
       )}
     </header>

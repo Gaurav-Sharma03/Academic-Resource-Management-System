@@ -2,9 +2,9 @@ import React from 'react';
 import shivam from '../assets/team/shivam.jpeg';
 import gaurav from '../assets/team/gaurav.jpeg';
 import mokshika from '../assets/team/mokshika.jpeg';
-//import richa from '../assets/team/richa.jpeg';
-//import nikhil from '../assets/team/nikhil.jpeg';
-//import abhishek from '../assets/team/abhishek.jpeg';
+import richa from '../assets/team/richa.jpeg';
+import nikhil from '../assets/team/nikhil.jpeg';
+import abhishek from '../assets/team/abhishek.jpeg';
 import chandni from '../assets/team/chandni.jpeg';
 import lakshay from '../assets/team/lakshay.jpeg';
 import spu from '../assets/team/spu.jpeg';
@@ -35,36 +35,36 @@ const teams = {
     {
       name: 'Richa Devi',
       role: 'UI/UX Designer',
-      email: 'richa@gmail.com',
+      email: 'richathakur30661@gmail.com',
       university: 'Sardar Patel University, Mandi',
-      photo: '',
+      photo: richa,
     },
     {
       name: 'Nikhil Kumar',
-      role: 'Logo Designer',
-      email: 'karan@example.com',
+      role: 'Logo Designer | Graphics Designe ',
+      email: 'nikhilkumar288039@gmail.com.com',
       university: 'Sardar Patel University, Mandi',
-      photo: '',
+      photo: nikhil,
     },
     {
       name: 'Abhishek',
-      role: 'Logo Designer',
-      email: 'karan@example.com',
+      role: 'Logo Designer | Graphics Designe',
+      email: 'abhishekchoudhary123123123@gmail.com',
       university: 'Sardar Patel University, Mandi',
-      photo: '',
+      photo: 'abhishek',
     },
   ],
   content: [
     {
       name: 'Chandni',
-      role: 'Notes Manager | Question Paper Analyst',
+      role: 'Notes Manager | Question Paper Analyst | Data Collector',
       email: 'chandnimandihp@gmail.com',
       university: 'Sardar Patel University, Mandi',
       photo: chandni,
     },
     {
       name: 'Lakshay',
-      role: 'Syllabus Curator | Content Manager',
+      role: 'Syllabus Curator | Content Manager | Data Collector',
       email: 'gulerialakshay278@gmial.com',
       university: 'Sardar Patel University, Mandi',
       photo: lakshay,

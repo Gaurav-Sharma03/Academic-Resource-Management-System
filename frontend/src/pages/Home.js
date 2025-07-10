@@ -235,10 +235,10 @@ const Home = () => {
             Collaborate with us and help improve academic access across universities.
           </p>
           <a
-            href="mailto:team@armsportal.in"
+            href="mailto:anshusharma5787@gmail.com"
             className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition"
           >
-            <FaEnvelope /> team@armsportal.in
+            <FaEnvelope /> anshusharma5787@gmail.com
           </a>
         </div>
       </section>

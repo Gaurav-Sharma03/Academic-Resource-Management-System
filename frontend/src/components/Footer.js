@@ -32,7 +32,7 @@ const Footer = () => {
                 Academic Source
              </span>
              <p className="text-sm text-gray-500 dark:text-gray-300">
-              “Your Academic Companion”
+             Tagline: All Your University Content, One Place
              </p>
            </div>
          </Link>

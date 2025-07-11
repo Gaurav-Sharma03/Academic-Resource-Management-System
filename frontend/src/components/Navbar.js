@@ -36,7 +36,7 @@ const Navbar = () => {
                 Academic Source
               </span>
               <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-300">
-                Academic Source
+               “Your Academic Companion”
               </p>
             </div>
           </Link>

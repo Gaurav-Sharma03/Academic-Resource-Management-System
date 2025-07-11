@@ -29,10 +29,10 @@ const Footer = () => {
                className="text-2xl font-extrabold text-blue-600 dark:text-blue-400 font-serif tracking-wide"
                title="Academic Source"
              >
-               ARMS
+                Academic Source
              </span>
              <p className="text-sm text-gray-500 dark:text-gray-300">
-               Academic Source 
+              “Your Academic Companion”
              </p>
            </div>
          </Link>

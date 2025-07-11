@@ -111,7 +111,18 @@ const teams = {
 
 
 
-const getIconForRole = (role) => { /* …unchanged… */ };
+const getIconForRole = (role) => {
+  const r = role.toLowerCase();
+  if (r.includes('coordinator')) return <FaUserTie />;
+  if (r.includes('developer') || r.includes('technical')) return <FaLaptopCode />;
+  if (r.includes('designer')) return <FaPalette />;
+  if (r.includes('curator') || r.includes('manager') || r.includes('analyst') || r.includes('collector')) return <FaBook />;
+  if (r.includes('mentor') || r.includes('teacher')) return <FaChalkboardTeacher />;
+  if (r.includes('university') || r.includes('provider')) return <FaUniversity />;
+  return <FaUsers />;
+};
+
+
 
 const TeamCard = ({ member, theme, onClick }) => {
   const themeColors = {

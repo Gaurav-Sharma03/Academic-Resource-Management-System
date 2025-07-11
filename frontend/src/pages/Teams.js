@@ -23,7 +23,93 @@ import hpu from '../assets/team/hpu.jpeg';
 
 /* ---------- (teams constant unchanged) ---------- */
 
-const teams = { /* …your data exactly as before… */ };
+const teams = {
+  planning: [
+    {
+      name: 'Shivam Sharma',
+      role: 'Project Coordinator',
+      email: 'anshusharma5787@gmail.com',
+      university: 'Sardar Patel University, Mandi',
+      photo: shivam,
+    },
+    {
+      name: 'Gaurav',
+      role: 'Technical Lead | Project Developer',
+      email: 'gauravspumca@gmail.com',
+      university: 'Sardar Patel University, Mandi',
+      photo: gaurav,
+    },
+    {
+      name: 'Mokshika Sharma',
+      role: 'UI/UX Designer',
+      email: 'mokshu0703@gmail.com',
+      university: 'Sardar Patel University, Mandi',
+      photo: mokshika,
+    },
+    {
+      name: 'Richa',
+      role: 'UI/UX Designer',
+      email: 'richathakur30661@gmail.com',
+      university: 'Sardar Patel University, Mandi',
+      photo: richa,
+    },
+    {
+      name: 'Nikhil Kumar',
+      role: 'Logo Designer | Graphics Designer',
+      email: 'nikhilkumar288039@gmail.com',
+      university: 'Sardar Patel University, Mandi',
+      photo: nikhil,
+    },
+    {
+      name: 'Abhishek',
+      role: 'Logo Designer | Graphics Designer',
+      email: 'abhishekchoudhary123123123@gmail.com',
+      university: 'Sardar Patel University, Mandi',
+      photo: abhishek,
+    },
+  ],
+  content: [
+    {
+      name: 'Chandni',
+      role: 'Notes Manager | Question Paper Analyst | Data Collector',
+      email: 'chandnimandihp@gmail.com',
+      university: 'Sardar Patel University, Mandi',
+      photo: chandni,
+    },
+    {
+      name: 'Lakshay',
+      role: 'Syllabus Curator | Content Manager | Data Collector',
+      email: 'gulerialakshay278@gmial.com',
+      university: 'Sardar Patel University, Mandi',
+      photo: lakshay,
+    },
+  ],
+  thanks: [
+    {
+      name: 'Dr. SPU Mentor',
+      role: 'Project Mentor',
+      email: 'mentor@spu.ac.in',
+      university: 'Sardar Patel University, Mandi',
+      photo: spu,
+    },
+    {
+      name: 'SPU, Mandi',
+      role: 'Academic Data Provider',
+      email: 'registrar@spumandi.ac.in',
+      university: 'Sardar Patel University, Mandi',
+      photo: spu,
+    },
+    {
+      name: 'HPU, Shimla',
+      role: 'Academic Data Provider',
+      email: 'deanstudies@hpuniv.ac.in',
+      university: 'Himachal Pradesh University, Shimla',
+      photo: hpu,
+    }
+  ]
+};
+
+
 
 const getIconForRole = (role) => { /* …unchanged… */ };
 

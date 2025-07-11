@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
-import ARMS from '../assets/ARMS.png'; // Logo image
+import AcademicSourceLogo from '../assets/Academic-Source.png';
 
 const Footer = () => {
   const [date, setDate] = useState(new Date());
@@ -21,23 +21,24 @@ const Footer = () => {
         {/* 1. Brand Info */}
         <div>
          <Link to="/" className="flex items-center space-x-3">
-           <img src={ARMS} alt="ARMS Logo" className="h-20 w-auto object-contain" />
+           <img src={AcademicSourceLogo}
+              alt="Academic Source Logo" className="h-20 w-auto object-contain" />
            
            <div className="leading-tight">
              <span
                className="text-2xl font-extrabold text-blue-600 dark:text-blue-400 font-serif tracking-wide"
-               title="Academic Resource Management System"
+               title="Academic Source"
              >
                ARMS
              </span>
              <p className="text-sm text-gray-500 dark:text-gray-300">
-               Academic Resource Management System
+               Academic Source 
              </p>
            </div>
          </Link>
          
           <p className="text-sm">Empowering students and faculty with centralized academic resources.</p>
-          <p className="text-sm mt-4">&copy; {new Date().getFullYear()} <span className="text-blue-600 dark:text-blue-300"> Academic Resource Management System Team</span></p>
+          <p className="text-sm mt-4">&copy; {new Date().getFullYear()} <span className="text-blue-600 dark:text-blue-300"> Academic Source  Team</span></p>
         </div>
 
         {/* 2. Quick Links */}
@@ -96,7 +97,7 @@ const Footer = () => {
 
       {/* Bottom Text */}
       <div className="text-center mt-10 text-xs text-gray-500 dark:text-gray-400">
-        All rights reserved © {new Date().getFullYear()} ARMS Portal
+        All rights reserved © {new Date().getFullYear()} Academic Source 
       </div>
     </footer>
   );

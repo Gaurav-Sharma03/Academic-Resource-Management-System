@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
-import ARMS from '../assets/ARMS.png';
+import AcademicSourceLogo from '../assets/Academic-Source.png';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,8 +24,8 @@ const Navbar = () => {
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-3 sm:gap-4">
             <img
-              src={ARMS}
-              alt="ARMS Logo"
+                 src={AcademicSourceLogo}
+              alt="Academic Source Logo"
               className="h-12 sm:h-16 md:h-20 w-auto object-contain transition-all duration-300"
             />
             <div className="leading-tight text-left">
@@ -33,10 +33,10 @@ const Navbar = () => {
                 className="text-lg sm:text-xl md:text-2xl font-extrabold text-blue-600 dark:text-blue-400 font-serif tracking-wide"
                 title="Academic Resource Management System"
               >
-                ARMS
+                Academic Source
               </span>
               <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-300">
-                Academic Resource Management System
+                Academic Source
               </p>
             </div>
           </Link>

@@ -30,18 +30,18 @@ const AboutUs = () => {
 
         {/* Title */}
         <h1 className="text-5xl font-extrabold text-center text-blue-900 dark:text-yellow-400 tracking-tight">
-          About ARMS Portal
+          About Academic Source Portal
         </h1>
 
-        {/* What is ARMS */}
+        {/* What is Academic Source */}
         <section className="bg-white dark:bg-gray-800 p-10 rounded-3xl shadow-2xl border-l-8 border-blue-500 dark:border-yellow-500">
           <h2 className="text-3xl font-bold text-center mb-6 flex items-center justify-center gap-3 text-blue-800 dark:text-yellow-300">
-            <FaInfoCircle className="text-4xl" /> What is ARMS?
+            <FaInfoCircle className="text-4xl" /> What is Academic Source?
           </h2>
           <p className="text-lg leading-relaxed mb-6 text-gray-700 dark:text-gray-300">
-            <strong className="text-blue-700 dark:text-yellow-300">ARMS (Academic Resource Management System)</strong> is an all-in-one academic portal built to digitize and simplify the distribution and management of educational materials across universities. It empowers students, faculty, and administrators by providing structured access to essential academic resources in one centralized platform.
+            <strong className="text-blue-700 dark:text-yellow-300">Academic Source (Academic Source Portal)</strong> is an all-in-one academic portal built to digitize and simplify the distribution and management of educational materials across universities. It empowers students, faculty, and administrators by providing structured access to essential academic resources in one centralized platform.
             <br /><br />
-            ARMS not only supports the academic journey of learners by organizing notes and exam content, but also enables educators to update and share resources instantly. With user-friendly interfaces and intuitive navigation, ARMS helps modernize how institutions manage learning assets and encourages collaborative academic growth.
+            Academic Source not only supports the academic journey of learners by organizing notes and exam content, but also enables educators to update and share resources instantly. With user-friendly interfaces and intuitive navigation, ARMS helps modernize how institutions manage learning assets and encourages collaborative academic growth.
           </p>
 
           <ul className="list-none space-y-4 text-gray-700 dark:text-gray-300 text-md mt-4">
@@ -71,7 +71,7 @@ const AboutUs = () => {
         {/* Who Benefits */}
         <section className="bg-gradient-to-br from-blue-200 to-blue-50 dark:from-gray-700 dark:to-gray-800 p-10 rounded-3xl shadow-lg">
           <h2 className="text-3xl font-bold text-center mb-6 flex items-center justify-center gap-3 text-blue-900 dark:text-yellow-300">
-            <FaUsers className="text-4xl" /> Who Benefits from ARMS?
+            <FaUsers className="text-4xl" /> Who Benefits from Academic Source?
           </h2>
           <div className="grid md:grid-cols-3 gap-6 text-center md:text-left">
             <div className="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow">
@@ -107,7 +107,7 @@ const AboutUs = () => {
             <FaBullseye className="text-4xl" /> Our Mission
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
-            At <strong className="text-blue-700 dark:text-yellow-300">ARMS Portal</strong>, our mission is to revolutionize academic access by creating a unified and transparent platform that bridges the gap between institutions, educators, and learners. We aim to eliminate resource barriers by digitizing all essential academic materials and delivering them through a modern, efficient, and mobile-friendly interface.
+            At <strong className="text-blue-700 dark:text-yellow-300">Academic Source</strong>, our mission is to revolutionize academic access by creating a unified and transparent platform that bridges the gap between institutions, educators, and learners. We aim to eliminate resource barriers by digitizing all essential academic materials and delivering them through a modern, efficient, and mobile-friendly interface.
             <br /><br />
             <FaUsers className="inline-block mr-2 text-blue-600 dark:text-yellow-300" /> We believe education should be inclusive,
             <FaHandshake className="inline-block mx-2 text-blue-600 dark:text-yellow-300" /> collaborative,

@@ -19,7 +19,7 @@ const Sidebar = () => {
   return (
     <aside className="w-64 min-h-screen bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 shadow-md p-5">
       <div className="mb-10 text-center">
-        <h2 className="text-2xl font-extrabold text-blue-600 dark:text-white">ARMS-PORTAL</h2>
+        <h2 className="text-2xl font-extrabold text-blue-600 dark:text-white">Academic Source</h2>
         <p className="text-sm text-gray-500 dark:text-gray-400">Admin Dashboard</p>
       </div>
 

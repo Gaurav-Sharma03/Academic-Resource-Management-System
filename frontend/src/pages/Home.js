@@ -82,7 +82,7 @@ const Home = () => {
         <div className="relative z-10 max-w-3xl mx-auto">
           <h1 className="text-5xl font-extrabold mb-4 tracking-tight">
             <FaLightbulb className="inline-block mr-2 text-yellow-300" />
-            Welcome to ARMS Portal
+            Welcome to  Academic Source Portal
           </h1>
           <p className="text-lg md:text-xl max-w-xl mx-auto">
             Academic Resource Management System for Students and Faculty
@@ -101,14 +101,14 @@ const Home = () => {
       {/* About Section */}
       <section className="py-20 px-6 max-w-5xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4 text-blue-700 dark:text-yellow-300 flex justify-center items-center gap-3">
-          <FaBookOpen /> What is ARMS?
+          <FaBookOpen /> What is  Academic Source?
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-          <strong>ARMS (Academic Resource Management System)</strong> is a centralized digital platform designed to streamline access to essential academic materials such as notes, syllabi, and previous year question papers across multiple universities. It empowers students by giving them quick, organized access to semester-wise learning resources, and simplifies content management for faculty and administrators.
+          <strong> Academic Source (Academic Resource Management System)</strong> is a centralized digital platform designed to streamline access to essential academic materials such as notes, syllabi, and previous year question papers across multiple universities. It empowers students by giving them quick, organized access to semester-wise learning resources, and simplifies content management for faculty and administrators.
           <br /><br />
-          Whether you're preparing for exams, revising topics, or exploring syllabi for upcoming semesters, ARMS ensures everything you need is just a click away. It supports a wide range of courses and departments, making it a one-stop academic companion for institutions aiming to digitize and modernize their resource sharing process.
+          Whether you're preparing for exams, revising topics, or exploring syllabi for upcoming semesters,  Academic Source ensures everything you need is just a click away. It supports a wide range of courses and departments, making it a one-stop academic companion for institutions aiming to digitize and modernize their resource sharing process.
           <br /><br />
-          ARMS also promotes collaboration and knowledge-sharing among institutions, bridging the gap between educators and learners with a reliable, user-friendly interface.
+           Academic Source also promotes collaboration and knowledge-sharing among institutions, bridging the gap between educators and learners with a reliable, user-friendly interface.
         </p>
       </section>
 
@@ -149,7 +149,7 @@ const Home = () => {
           </h3>
           <div className="grid gap-8 md:grid-cols-3 text-gray-700 dark:text-gray-300">
             {[
-              { quote: 'Thanks to ARMS Portal, finding study material has become 10x easier!', name: 'Ritika Mehta', role: 'Student - SPU Mandi' },
+              { quote: 'Thanks to  Academic Source Portal, finding study material has become 10x easier!', name: 'Ritika Mehta', role: 'Student - SPU Mandi' },
               { quote: 'As a teacher, uploading and organizing resources is now a breeze.', name: 'Dr. Neha Sharma', role: 'Faculty - SPU Mandi' },
               { quote: 'Multi-university management from one dashboard is a game changer.', name: 'System Admin', role: 'Academic Coordinator' }
             ].map((t, i) => (
@@ -180,7 +180,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
         <div className="relative max-w-5xl mx-auto px-4 text-center z-10">
-          <h2 className="text-3xl font-bold text-white mb-10">ARMS in Numbers</h2>
+          <h2 className="text-3xl font-bold text-white mb-10"> Academic Source in Numbers</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div><p className="text-4xl font-bold">5+</p><p className="mt-2">Universities</p></div>
             <div><p className="text-4xl font-bold">35+</p><p className="mt-2">Courses</p></div>
@@ -192,9 +192,9 @@ const Home = () => {
 
 
 
-      {/* Why Choose ARMS Section */}
+      {/* Why Choose  Academic Source Section */}
       <section className="py-20 bg-white dark:bg-gray-800 px-6 text-center">
-        <h2 className="text-3xl font-bold text-blue-700 dark:text-yellow-300 mb-6">Why Choose ARMS?</h2>
+        <h2 className="text-3xl font-bold text-blue-700 dark:text-yellow-300 mb-6">Why Choose  Academic Source?</h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="bg-blue-100 dark:bg-gray-700 p-6 rounded-xl shadow">
             <h3 className="text-xl font-semibold mb-2"><FaGlobe className="inline-block mr-2" /> Multi-University Access</h3>
@@ -231,7 +231,7 @@ const Home = () => {
             <FaLightbulb className="text-yellow-400" /> Want to Join Our Team?
           </h2>
           <p className="text-lg text-gray-200 mb-8">
-            We're always looking for passionate contributors, educators, developers, and students to be part of ARMS Portal.
+            We're always looking for passionate contributors, educators, developers, and students to be part of  Academic Source Portal.
             Collaborate with us and help improve academic access across universities.
           </p>
           <a
